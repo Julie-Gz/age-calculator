@@ -1,0 +1,231 @@
+:root{
+    /* Primary */
+    --Purple: hsl(259, 100%, 65%);
+    --DarkPurple: hsl(259, 99%, 58%);
+    --LightRed: hsl(0, 100%, 67%);
+
+    /* Neutral */
+    --White: hsl(0, 0%, 100%);
+    --OffWhite: hsl(0, 0%, 94%);
+    --LightGrey: hsl(0, 0%, 86%);
+    --SmokeyGrey: hsl(0, 1%, 44%);
+    --OffBlack: hsl(0, 0%, 8%);
+
+    /* Font Size */
+    --LabelFS: 0.9rem;
+    --InputFS: 1.5rem;
+    --OutputFS: 4rem;
+    --OutputFSsm: 2.5rem;
+    --OutputFSmd: 3.5rem;
+}
+
+/* Fonts */
+@font-face {
+    font-family: "poppinsBoldItalic";
+    src: url("assets/fonts/Poppins-BoldItalic.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "poppinsBold";
+    src: url("assets/fonts/Poppins-Bold.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "poppinsRegular";
+    src: url("assets/fonts/Poppins-Regular.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "poppinsItalic";
+    src: url("assets/fonts/Poppins-Italic.ttf") format("truetype");
+}
+
+*,*::before,*::after{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html,body{
+    overflow-x: hidden;
+}
+
+body{
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color: var(--LightGrey);
+}
+
+main{
+    padding: 3em;
+    max-width: 700px;
+    width: 60%;
+    background-color: var(--White);
+    border-radius: 20px 20px 150px 20px;
+    margin-bottom: 2em;
+}
+
+hr,img{
+    max-width: 100%;
+}
+
+img{
+    height: auto;
+    display: block;
+}
+
+hr{
+    display: inline-block;
+}
+
+button{
+    outline: none;
+    border: none;
+}
+
+label,input{
+    max-width: 100%;
+    display: block;
+}
+
+input{
+    font-size: var(--InputFS);
+    font-family: "poppinsBold";
+    color: var(--SmokeyGrey);
+    border: 1px solid var(--LightGrey);
+    outline: none;
+    padding: 0.5em 1em;
+    border-radius: 10px;
+}
+
+input:focus{
+    border-color: var(--Purple);
+}
+
+label{
+    text-transform: uppercase;
+    font-size: var(--LabelFS);
+    font-family: "poppinsRegular";
+    font-weight: bold;
+    color: var(--SmokeyGrey);
+    margin-bottom: 1em;
+}
+
+fieldset{
+    display: flex;
+    align-items: center; 
+    justify-content: space-between;
+    flex-wrap: wrap;
+    width: 100%; 
+    border: none;
+    outline: none;
+    margin-bottom: 2em;
+}
+
+.container{
+    width: calc((100% / 3) - 1em);
+}
+
+.error-message{
+    color: var(--LightRed);
+    font-family: "poppinsItalic";
+}
+
+.input-error{
+    border-color: var(--LightRed);
+}
+
+.input-label-error{
+    color: var(--LightRed);
+}
+
+.divider{
+    position: relative;
+    margin-bottom: 2em;
+}
+
+.arrow-icon{
+    position: absolute;
+    right: 0;
+    top: -2em;
+    background-color: var(--Purple);
+    padding: 0.8em;
+    border-radius: 50%;
+    transform: scale(0.8);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.arrow-icon:hover{
+    background-color: var(--DarkPurple);
+}
+
+.arrow-icon:active{
+    background-color: var(--DarkPurple);
+    transform: scale(0.7);
+}
+
+hr{
+    width: 80%;
+}
+
+/* Displayed Date */
+.date{
+    font-family: "poppinsBoldItalic";
+    font-size: var(--OutputFS);
+    color: var(--OffBlack)
+}
+
+.input-date{
+    color: var(--Purple);
+}
+
+/* Media Query */
+@media screen and (min-width: 481px) and (max-width: 769px) {
+    main{
+        width: 80%;
+    }
+
+    fieldset{
+        display: block;
+        text-align: center;
+    }
+
+    .container:not(:last-child){
+        margin-bottom: 2em;
+    }
+
+    .date{
+        font-size: var(--OutputFSmd);
+    }
+}
+
+@media screen and (max-width: 480px){
+    main{
+        width: 90%;
+    }
+
+    fieldset{
+        display: block;
+    }
+
+    .container:not(:last-child){
+        margin-bottom: 2em;
+    }
+
+    .date{
+        font-size: var(--OutputFSsm);
+    }
+}
+
+/* Attribution */
+.attribution { 
+    font-size: 11px;
+    text-align: center; 
+}
+.attribution a { 
+    color: hsl(228, 45%, 44%); 
+}
